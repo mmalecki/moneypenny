@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var moneypenny = require('../lib/moneypenny');
+
+var config = require('../config.json');
+
+var bot = moneypenny(config);
+
+bot.irc.on('message', function (from, to, message) {
+  console.log(from, '->', to + ':', message);
+});
