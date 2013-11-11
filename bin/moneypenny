@@ -13,4 +13,4 @@ bot.irc.on('message', function (from, to, message) {
 http.createServer(function (req, res) {
   res.writeHead(200, { 'content-type': 'application/json' });
   res.end(JSON.stringify({ moneypenny: 'Hello' }));
-}).listen(2007);
+}).listen(process.env.PORT || 2007);
